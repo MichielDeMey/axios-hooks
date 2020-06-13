@@ -189,7 +189,7 @@ export function makeUseAxios(configurationOptions) {
       (configOverride, options) => {
         return executeRequest(
           {
-            cancelToken: cancelSourceRef.current.token,
+            cancelToken: cancelSourceRef.current ? cancelSourceRef.current.token : undefined,
             ...config,
             ...configOverride
           },
